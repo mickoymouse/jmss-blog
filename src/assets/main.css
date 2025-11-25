@@ -17,6 +17,7 @@ body,
 }
 
 :root {
+    /* colors */
     /* neutral */
     --neutral-900: #1c1a19;
     --neutral-800: #201E1D;
@@ -46,6 +47,75 @@ body,
     /* red */
     --red-600: #D92D20;
     --red-400: #F04438;
+
+    /* typography */
+    .text-1 {
+        font-size: 40px;
+        line-height: 130%;
+        letter-spacing: -1px;
+    }
+
+    .text-2 {
+        font-size: 32px;
+        line-height: 130%;
+        letter-spacing: -0.5px;
+    }
+
+    .text-3 {
+        font-size: 28px;
+        line-height: 130%;
+        letter-spacing: -0.5px;
+    }
+    
+    .text-4 {
+        font-size: 24px;
+        line-height: 130%;
+        letter-spacing: -0.5px;
+    }
+
+    .text-5 {
+        font-size: 20px;
+        line-height: 130%;
+        letter-spacing: -0.5px;
+    }
+
+    .text-6 {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.5px;
+    }
+
+    .text-7 {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.2px;
+    }
+
+    .text-7-semibold {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: -0.2px;
+        font-weight: 600;
+    }
+
+    .text-8 {
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: -0.2px;
+    }
+
+    .text-8-italic {
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: -0.2px;
+        font-style: italic;
+    }
+
+    .text-9 {
+        font-size: 16px;
+        line-height: 146%;
+        letter-spacing: -0.4px;
+    }
 }
 
 .dark {
