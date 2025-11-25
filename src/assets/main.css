@@ -18,6 +18,8 @@ body,
 
 :root {
     /* colors */
+    --background: #FFFFFF;
+
     /* neutral */
     --neutral-900: #1c1a19;
     --neutral-800: #201E1D;
@@ -124,6 +126,6 @@ body,
 
 @layer base {
     body {
-        @apply font-dm-sans;
+        @apply font-dm-sans bg-(--background);
     }
 }

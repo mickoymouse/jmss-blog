@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import Navbar from "@/components/Narbar.vue";
+import Navbar from "@/components/Navbar.vue";
+import PatternLight from "@/assets/pattern-light.svg";
 </script>
 
 <template>
-  <div class="flex justify-center">
-    <Navbar />
+  <div class="relative">
+    <div class="flex justify-center">
+      <Navbar />
+    </div>
+    <main>
+      <PatternLight class="absolute top-0 right-0 translate-x-1/2" />
+      <PatternLight class="absolute top-0 left-0 translate-y-1/2 -translate-x-1/2" />
+      <RouterView />
+    </main>
   </div>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
 </template>
 
 <style scoped></style>
