@@ -9,8 +9,8 @@ import PatternLight from "@/assets/pattern-light.svg";
       <Navbar />
     </div>
     <main>
-      <PatternLight class="absolute top-0 right-0 translate-x-1/2" />
-      <PatternLight class="absolute top-0 left-0 translate-y-1/2 -translate-x-1/2" />
+      <PatternLight class="absolute top-0 right-0 translate-x-1/2 -z-5" />
+      <PatternLight class="absolute top-0 left-0 translate-y-1/2 -translate-x-1/2 -z-5" />
       <RouterView />
     </main>
   </div>
