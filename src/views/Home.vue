@@ -146,21 +146,3 @@ const articles = ref([
     </section>
   </div>
 </template>
-
-<style scoped>
-.with-underline {
-  position: relative;
-  display: inline-block;
-}
-
-.with-underline::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 8px;
-  background-color: var(--blue-500);
-  bottom: 6px;
-  left: 0;
-  z-index: -1;
-}
-</style>
