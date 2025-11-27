@@ -111,6 +111,7 @@ body,
         font-size: 16px;
         line-height: 130%;
         letter-spacing: -0.2px;
+        font-weight: 400;
     }
 
     .text-8-italic {
@@ -151,6 +152,6 @@ body,
 
 @layer base {
     body {
-        @apply font-dm-sans bg-(--background);
+        @apply font-dm-sans bg-(--background) text-(--neutral-700);
     }
 }
