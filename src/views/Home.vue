@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Simplebar from "simplebar-vue";
-import "simplebar-vue/dist/simplebar.min.css";
 
+import Divider from "@/components/ui/Divider.vue";
 import GithubLogo from "@/assets/logo-github.svg";
 import LinkedinLogo from "@/assets/logo-linkedin.svg";
 import FemLogo from "@/assets/logo-frontend-mentor.svg";
@@ -80,77 +79,72 @@ const articles = ref([
 </script>
 
 <template>
-  <Simplebar class="h-full">
-    <div class="flex flex-col gap-6 pt-12">
-      <h1 class="text-2 self-start with-underline">Hi, I'm Paulina 👋</h1>
-      <div class="flex flex-col gap-6">
-        <p class="text-7">
-          I'm on a journey to become a front-end web developer. I love building little projects,
-          trying out new coding techniques, and sharing what I learn along the way. When I'm not at
-          my desk, you'll find me reading, hiking through the mountains, or challenging myself on
-          rock-climbing walls.
-        </p>
-        <p class="text-7">
-          I started this blog to document my progress, keep myself accountable, and hopefully
-          inspire anyone else who's learning to code. Welcome to my corner of the internet, and
-          thanks for stopping by!
-        </p>
-        <div class="flex gap-4 items-center">
-          <a
-            class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
-            aria-label="GitHub link"
-            href="https://github.com/mickoymouse"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubLogo
-          /></a>
-          <a
-            class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
-            aria-label="LinkedIn link"
-            href="https://www.linkedin.com/in/micko-silvestre-1b5b4a188"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><LinkedinLogo
-          /></a>
-          <a
-            class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
-            aria-label="Frontend Mentor link"
-            href="https://www.frontendmentor.io/profile/mickoymouse"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><FemLogo
-          /></a>
-        </div>
+  <div class="flex flex-col gap-6 pt-12">
+    <h1 class="text-2 self-start with-underline">Hi, I'm Paulina 👋</h1>
+    <div class="flex flex-col gap-6">
+      <p class="text-7">
+        I'm on a journey to become a front-end web developer. I love building little projects,
+        trying out new coding techniques, and sharing what I learn along the way. When I'm not at my
+        desk, you'll find me reading, hiking through the mountains, or challenging myself on
+        rock-climbing walls.
+      </p>
+      <p class="text-7">
+        I started this blog to document my progress, keep myself accountable, and hopefully inspire
+        anyone else who's learning to code. Welcome to my corner of the internet, and thanks for
+        stopping by!
+      </p>
+      <div class="flex gap-4 items-center">
+        <a
+          class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
+          aria-label="GitHub link"
+          href="https://github.com/mickoymouse"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GithubLogo
+        /></a>
+        <a
+          class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
+          aria-label="LinkedIn link"
+          href="https://www.linkedin.com/in/micko-silvestre-1b5b4a188"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><LinkedinLogo
+        /></a>
+        <a
+          class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
+          aria-label="Frontend Mentor link"
+          href="https://www.frontendmentor.io/profile/mickoymouse"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><FemLogo
+        /></a>
       </div>
-      <div class="h-px bg-(--neutral-200)"></div>
-      <section class="flex-1 flex flex-col gap-8 pb-6" aria-label="Latest Articles">
-        <header class="flex gap-4">
-          <h2 class="text-2">Latest Articles</h2>
-          <span
-            class="h-1 w-10 bg-(--blue-500) inline-block self-end mb-2"
-            aria-hidden="true"
-          ></span>
-        </header>
-        <div class="flex flex-col gap-6">
-          <article v-for="article in articles">
-            <RouterLink :to="`/articles/${article.slug}`" class="flex flex-col gap-2">
-              <h3 class="text-5">{{ article.title }}</h3>
-              <p class="text-8-italic text-(--neutral-600)">
-                {{
-                  new Date(article.publishedAt).toLocaleDateString(undefined, {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })
-                }}
-              </p>
-            </RouterLink>
-          </article>
-        </div>
-      </section>
     </div>
-  </Simplebar>
+    <Divider />
+    <section class="flex-1 flex flex-col gap-8 pb-6" aria-label="Latest Articles">
+      <header class="flex gap-4">
+        <h2 class="text-2">Latest Articles</h2>
+        <span class="h-1 w-10 bg-(--blue-500) inline-block self-end mb-2" aria-hidden="true"></span>
+      </header>
+      <div class="flex flex-col gap-6">
+        <article v-for="article in articles">
+          <RouterLink :to="`/articles/${article.slug}`" class="flex flex-col gap-2">
+            <h3 class="text-5">{{ article.title }}</h3>
+            <p class="text-8-italic text-(--neutral-600)">
+              {{
+                new Date(article.publishedAt).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })
+              }}
+            </p>
+          </RouterLink>
+        </article>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style scoped>

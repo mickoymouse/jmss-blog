@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import Simplebar from "simplebar-vue";
+import "simplebar-vue/dist/simplebar.min.css";
+
 import Navbar from "@/components/Navbar.vue";
+import Footer from "@/components/Footer.vue";
 import PatternLight from "@/assets/pattern-light.svg";
 </script>
 
@@ -13,7 +17,10 @@ import PatternLight from "@/assets/pattern-light.svg";
     <main
       class="h-[calc(100vh-52px)] max-w-[630px] w-full border-l-2 border-r-2 border-b-2 border-(--neutral-200) px-2"
     >
-      <RouterView />
+      <Simplebar class="h-[calc(100%-80px)]">
+        <RouterView />
+      </Simplebar>
+      <Footer />
     </main>
   </div>
 </template>
