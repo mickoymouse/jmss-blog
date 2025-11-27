@@ -82,7 +82,7 @@ const articles = ref([
 <template>
   <Simplebar class="h-full">
     <div class="flex flex-col gap-6 pt-12">
-      <h1 class="text-2">Hi, I'm Paulina 👋</h1>
+      <h1 class="text-2 self-start with-underline">Hi, I'm Paulina 👋</h1>
       <div class="flex flex-col gap-6">
         <p class="text-7">
           I'm on a journey to become a front-end web developer. I love building little projects,
@@ -152,3 +152,21 @@ const articles = ref([
     </div>
   </Simplebar>
 </template>
+
+<style scoped>
+.with-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.with-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background-color: var(--blue-500);
+  bottom: 6px;
+  left: 0;
+  z-index: -1;
+}
+</style>
