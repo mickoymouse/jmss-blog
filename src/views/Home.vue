@@ -3,6 +3,10 @@ import { ref } from "vue";
 import Simplebar from "simplebar-vue";
 import "simplebar-vue/dist/simplebar.min.css";
 
+import GithubLogo from "@/assets/logo-github.svg";
+import LinkedinLogo from "@/assets/logo-linkedin.svg";
+import FemLogo from "@/assets/logo-frontend-mentor.svg";
+
 const articles = ref([
   {
     title: "Balancing Hobbies and Coding: How Hiking and Rock Climbing Help Me Stay Motivated",
@@ -91,6 +95,33 @@ const articles = ref([
           inspire anyone else who's learning to code. Welcome to my corner of the internet, and
           thanks for stopping by!
         </p>
+        <div class="flex gap-4 items-center">
+          <a
+            class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
+            aria-label="GitHub link"
+            href="https://github.com/mickoymouse"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubLogo
+          /></a>
+          <a
+            class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
+            aria-label="LinkedIn link"
+            href="https://www.linkedin.com/in/micko-silvestre-1b5b4a188"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><LinkedinLogo
+          /></a>
+          <a
+            class="border-2 border-(--neutral-200) p-2 rounded-md bg-white"
+            aria-label="Frontend Mentor link"
+            href="https://www.frontendmentor.io/profile/mickoymouse"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><FemLogo
+          /></a>
+        </div>
       </div>
       <div class="h-px bg-(--neutral-200)"></div>
       <section class="flex-1 flex flex-col gap-8 pb-6" aria-label="Latest Articles">
