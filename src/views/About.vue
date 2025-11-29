@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { PortableText } from "@portabletext/vue";
-import { h, onMounted, ref } from "vue";
+import { onMounted, ref } from "vue";
 
-import { sanityClient, urlFor } from "@/composables/Sanity";
+import { sanityClient } from "@/composables/Sanity";
+import { components } from "@/components/renderers/Components";
 
 const aboutMe = ref<any | null>(null);
 
@@ -13,12 +14,6 @@ onMounted(async () => {
 
   console.log("About Me data:", aboutMe.value);
 });
-
-const components = {
-  types: {
-    image: ({ value }: { value: any }) => h("img", { src: urlFor(value.asset).width(600).url() }),
-  },
-};
 </script>
 
 <template>
