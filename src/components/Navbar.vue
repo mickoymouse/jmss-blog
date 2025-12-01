@@ -7,19 +7,20 @@ import DarkIcon from "@/icons/icon-moon.svg";
 const routes = [
   {
     name: "Home",
-    path: "/",
+    routeName: "home",
   },
   {
     name: "Blog",
-    path: "/blog",
+    routeName: "blog-list",
+    matchNames: ["blog-list", "blog-detail"],
   },
   {
     name: "About",
-    path: "/about",
+    routeName: "about",
   },
   {
     name: "Newsletter",
-    path: "/newsletter",
+    routeName: "newsletter",
   },
 ];
 const route = useRoute();
@@ -31,7 +32,10 @@ const navActiveStyle = ref({
 });
 
 const updateNavActiveStyle = () => {
-  const idx = routes.findIndex((r) => r.path === route.path);
+  const idx = routes.findIndex(
+    (r) =>
+      r.routeName === route.name || (r.matchNames && r.matchNames.includes(route.name as string))
+  );
   if (idx === -1 || !links.value[idx]) return;
   const el = links.value[idx].querySelector("a");
   if (!el) return;
@@ -57,7 +61,7 @@ onMounted(() => {
     <nav class="flex gap-4 items-center">
       <ul class="flex gap-6 relative">
         <div v-for="r in routes" :key="r.name" class="flex flex-col" ref="links">
-          <RouterLink :to="r.path" tag="li">{{ r.name }}</RouterLink>
+          <RouterLink :to="{ name: r.routeName }" tag="li">{{ r.name }}</RouterLink>
         </div>
         <span
           :style="navActiveStyle"
