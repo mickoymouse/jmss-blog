@@ -7,6 +7,7 @@ import LinkedinLogo from "@/assets/logo-linkedin.svg";
 import FemLogo from "@/assets/logo-frontend-mentor.svg";
 import { sanityClient } from "@/composables/Sanity";
 import type { Blog } from "@/types/blog";
+import BlogLink from "@/components/BlogLink.vue";
 
 const articles = ref<Blog[]>([]);
 
@@ -68,19 +69,8 @@ onMounted(async () => {
         <span class="h-1 w-10 bg-(--blue-500) inline-block self-end mb-2" aria-hidden="true"></span>
       </header>
       <div class="flex flex-col gap-6">
-        <article v-for="article in articles">
-          <RouterLink :to="`/blog/${article.slug.current}`" class="flex flex-col gap-2">
-            <h3 class="text-5">{{ article.title }}</h3>
-            <p class="text-8-italic text-(--neutral-600)">
-              {{
-                new Date(article._createdAt).toLocaleDateString(undefined, {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })
-              }}
-            </p>
-          </RouterLink>
+        <article v-for="article in articles" :key="article._id">
+          <BlogLink :article="article" />
         </article>
       </div>
     </section>

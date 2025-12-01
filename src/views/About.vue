@@ -12,8 +12,6 @@ onMounted(async () => {
   const query = `*[_type == "aboutMe"][0]`;
   const result = await sanityClient.fetch(query);
   aboutMe.value = result;
-
-  console.log("About Me data:", aboutMe.value);
 });
 </script>
 
