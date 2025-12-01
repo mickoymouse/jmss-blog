@@ -9,9 +9,15 @@ const router = createRouter({
       component: () => import("@/views/Home.vue"),
     },
     {
-      name: "blog",
+      name: "blog-list",
       path: "/blog",
+      component: () => import("@/views/BlogList.vue"),
+    },
+    {
+      name: "blog-detail",
+      path: "/blog/:slug",
       component: () => import("@/views/Blog.vue"),
+      props: true,
     },
     {
       name: "about",
