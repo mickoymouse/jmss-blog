@@ -29,7 +29,7 @@ onMounted(async () => {
 });
 </script>
 <template>
-  <div class="pt-12">
+  <div class="pt-12 pb-4">
     <PortableText :value="blog?.content" :components="components" />
   </div>
 </template>
