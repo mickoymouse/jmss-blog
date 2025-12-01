@@ -4,8 +4,9 @@ import { onMounted, ref } from "vue";
 
 import { sanityClient } from "@/composables/Sanity";
 import { components } from "@/components/renderers/Components";
+import type { Blog } from "@/types/blog";
 
-const aboutMe = ref<any | null>(null);
+const aboutMe = ref<Blog | null>(null);
 
 onMounted(async () => {
   const query = `*[_type == "aboutMe"][0]`;
