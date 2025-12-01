@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref, watch } from "vue";
+import { nextTick, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import DarkIcon from "@/icons/icon-moon.svg";
@@ -46,10 +46,18 @@ const updateNavActiveStyle = () => {
   };
 };
 
-watch(() => route.path, updateNavActiveStyle);
+watch(
+  () => route.name,
+  () => {
+    nextTick(updateNavActiveStyle);
+  },
+  { immediate: true }
+);
 
 onMounted(() => {
-  updateNavActiveStyle();
+  nextTick(() => {
+    updateNavActiveStyle();
+  });
 });
 </script>
 
