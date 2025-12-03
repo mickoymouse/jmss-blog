@@ -30,10 +30,10 @@ const { isDarkMode } = useTheme();
     <main
       class="flex flex-col h-[calc(100%-52px)] max-w-[calc(100%-32px)] md:max-w-[630px] px-2 w-full border-l-2 border-r-2 border-b-2 border-(--border-color)"
     >
-      <Simplebar class="h-100 flex-1">
+      <Simplebar class="h-[calc(100%-80px)]">
         <RouterView />
       </Simplebar>
-      <Footer class="shrink-0" />
+      <Footer />
     </main>
   </div>
 </template>
