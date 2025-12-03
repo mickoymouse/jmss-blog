@@ -56,11 +56,13 @@ body,
     --red-600: #D92D20;
     --red-400: #F04438;
 
-    .nav-link {
+    .nav-link{
         color: var(--inactive-link);
     }
 
-    .nav-link.active {
+    .nav-link.active,
+    .router-link-active,
+    .router-link-exact-active {
         color: var(--active-link);
     }
 
