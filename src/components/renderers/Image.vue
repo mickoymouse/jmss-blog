@@ -6,5 +6,5 @@ import { urlFor } from "@/composables/Sanity";
 const props = defineProps<PortableTextComponentProps<{ asset: any; alt?: string }>>();
 </script>
 <template>
-  <img :src="urlFor(value.asset).width(600).url()" :alt="value.alt || 'Image'" />
+  <img class="rounded-lg" :src="urlFor(value.asset).width(600).url()" :alt="value.alt || 'Image'" />
 </template>

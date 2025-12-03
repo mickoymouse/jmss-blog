@@ -16,8 +16,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <h1 class="with-underline text-2 pt-12 self-start">About Me</h1>
+  <div class="flex flex-col pb-4">
+    <h1 class="with-underline text-2 pt-12 self-start mb-4">About Me</h1>
     <PortableText :value="aboutMe?.content" :components="components" />
   </div>
 </template>
