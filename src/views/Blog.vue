@@ -39,7 +39,7 @@ const fetchBlog = async (slug: string) => {
   <div class="pt-12 pb-4">
     <div v-if="isLoading" class="flex flex-col w-full gap-4">
       <div v-for="i in 5" class="flex flex-col gap-4">
-        <div class="h-4 w-[350px] bg-gray-200 animate-pulse rounded-md"></div>
+        <div class="h-4 w-1/2 bg-gray-200 animate-pulse rounded-md"></div>
         <div v-for="i in 5" class="h-4 w-full bg-gray-200 animate-pulse rounded-md"></div>
       </div>
     </div>
