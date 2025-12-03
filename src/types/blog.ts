@@ -4,6 +4,7 @@ export interface Blog {
   _updatedAt: string;
   content: any[];
   title: string;
+  excerpt?: string;
   slug: {
     _type: string;
     current: string;

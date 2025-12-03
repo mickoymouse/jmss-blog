@@ -90,7 +90,7 @@ onMounted(async () => {
       </div>
       <div v-else class="flex flex-col gap-6">
         <article v-for="article in articles" :key="article._id">
-          <BlogLink :article="article" />
+          <BlogLink :article="article" :showExcerpt="false" />
         </article>
       </div>
     </section>

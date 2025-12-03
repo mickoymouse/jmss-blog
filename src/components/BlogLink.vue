@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Blog } from "@/types/blog";
-defineProps<{ article: Blog }>();
+defineProps<{ article: Blog; showExcerpt: boolean }>();
 </script>
 
 <template>
@@ -14,6 +14,9 @@ defineProps<{ article: Blog }>();
           day: "numeric",
         })
       }}
+    </p>
+    <p v-if="showExcerpt && article.excerpt" class="text-7 text-(--foreground-secondary)">
+      {{ article.excerpt }}
     </p>
   </RouterLink>
 </template>
