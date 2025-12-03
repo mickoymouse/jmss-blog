@@ -156,7 +156,7 @@ body,
         width: 100%;
         height: 8px;
         background-color: var(--blue-500);
-        bottom: 6px;
+        bottom: 4px;
         left: 0;
         z-index: -1;
     }

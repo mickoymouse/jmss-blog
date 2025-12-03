@@ -21,18 +21,25 @@ onMounted(async () => {
 
 <template>
   <div class="flex flex-col gap-6 pt-12">
-    <h1 class="text-2 self-start with-underline">Hi, I'm Paulina 👋</h1>
+    <h1 class="text-2 self-start with-underline">Hi, I'm Micko 👋</h1>
     <div class="flex flex-col gap-6">
       <p class="text-7 text-(--foreground-secondary)">
-        I'm on a journey to become a front-end web developer. I love building little projects,
-        trying out new coding techniques, and sharing what I learn along the way. When I'm not at my
-        desk, you'll find me reading, hiking through the mountains, or challenging myself on
-        rock-climbing walls.
+        I started my career in mobile development, and over the years I've grown into a versatile
+        developer, working across front-end, APIs, and databases. Along the way, I've applied AWS
+        from a developer's perspective and explored a range of modern tools and frameworks. I'm
+        always curious, trying out new technologies, and building projects that put my skills to the
+        test.
       </p>
       <p class="text-7 text-(--foreground-secondary)">
-        I started this blog to document my progress, keep myself accountable, and hopefully inspire
-        anyone else who's learning to code. Welcome to my corner of the internet, and thanks for
-        stopping by!
+        I started this blog to document my journey, share side projects and tutorials, and reflect
+        on what I've learned along the way. It's also a space to experiment with new ideas and
+        showcase my work—a living portfolio of my growth as a developer.
+      </p>
+      <p class="text-7 text-(--foreground-secondary)">
+        When I'm not coding or exploring tech, you'll usually find me gaming—either on the computer
+        or at the chessboard, which I'm currently obsessed with and trying to get better at. Welcome
+        to my corner of the internet—let's learn, experiment, and maybe even play a game or two
+        along the way!
       </p>
       <div class="flex gap-4 items-center">
         <a
