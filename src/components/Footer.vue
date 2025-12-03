@@ -6,7 +6,7 @@ import FemLogo from "@/assets/logo-frontend-mentor.svg";
 </script>
 
 <template>
-  <div class="flex flex-col gap-6 h-20">
+  <div class="flex flex-col gap-6 h-[60px]">
     <Divider />
     <footer class="flex items-center justify-between">
       <p class="text-8">Made with ❤️ and ☕️</p>

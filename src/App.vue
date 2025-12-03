@@ -28,12 +28,12 @@ const { isDarkMode } = useTheme();
       class="hidden lg:block absolute top-0 left-0 translate-y-1/2 -translate-x-1/2 -z-5"
     />
     <main
-      class="flex flex-col h-[calc(100%-52px)] max-w-[calc(100%-32px)] md:max-w-[630px] px-2 w-full border-l-2 border-r-2 border-b-2 border-(--border-color)"
+      class="flex flex-col flex-1 min-h-0 max-w-[calc(100%-32px)] md:max-w-[630px] px-2 w-full border-l-2 border-r-2 border-b-2 border-(--border-color)"
     >
-      <Simplebar class="h-[calc(100%-80px)]">
+      <Simplebar class="flex-1 min-h-0">
         <RouterView />
       </Simplebar>
-      <Footer />
+      <Footer class="shrink-0" />
     </main>
   </div>
 </template>
