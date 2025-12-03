@@ -122,6 +122,7 @@ onMounted(() => {
             class="nav-link"
             :to="{ name: r.routeName }"
             tag="li"
+            @click="isMenuOpen = false"
             >{{ r.name }}</RouterLink
           >
           <Divider v-if="index < routes.length - 1" />
