@@ -1,3 +1,3 @@
 <template>
-  <div class="h-px bg-(--neutral-200)"></div>
+  <div class="h-px bg-(--border-color)"></div>
 </template>

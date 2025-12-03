@@ -48,26 +48,33 @@ export const components: PortableTextComponents = {
     callout: calloutRenderer,
   },
   block: {
-    h1: convertEmptyContentToBr("h1", "text-1 text-(--neutral-700)"),
-    h2: convertEmptyContentToBr("h2", "text-2 text-(--neutral-700)"),
-    h3: convertEmptyContentToBr("h3", "text-3 text-(--neutral-700)"),
-    h4: convertEmptyContentToBr("h4", "text-4 text-(--neutral-700)"),
-    h5: convertEmptyContentToBr("h5", "text-5 text-(--neutral-700)"),
-    h6: convertEmptyContentToBr("h6", "text-6 text-(--neutral-700)"),
-    normal: convertEmptyContentToBr("p", "text-7 text-(--neutral-600)"),
+    h1: convertEmptyContentToBr("h1", "text-1 text-(--foreground)"),
+    h2: convertEmptyContentToBr("h2", "text-2 text-(--foreground)"),
+    h3: convertEmptyContentToBr("h3", "text-3 text-(--foreground)"),
+    h4: convertEmptyContentToBr("h4", "text-4 text-(--foreground)"),
+    h5: convertEmptyContentToBr("h5", "text-5 text-(--foreground)"),
+    h6: convertEmptyContentToBr("h6", "text-6 text-(--foreground)"),
+    normal: convertEmptyContentToBr("p", "text-7 text-(--foreground-secondary)"),
     blockquote: convertEmptyContentToBr(
       "blockquote",
-      "border-l-4 border-(--neutral-400) pl-4 text-7 text-(--neutral-700"
+      "border-l-4 border-(--neutral-400) pl-4 text-7 text-(--foreground)"
     ),
   },
   list: {
-    bullet: (_, { slots }) => h("ul", { class: "pl-6 list-disc" }, slots.default?.()),
-    number: (_, { slots }) => h("ol", { class: "pl-6 list-decimal" }, slots.default?.()),
+    bullet: (_, { slots }) =>
+      h("ul", { class: "pl-6 list-disc text-7 text-(--foreground-secondary)" }, slots.default?.()),
+    number: (_, { slots }) =>
+      h(
+        "ol",
+        { class: "pl-6 list-decimal text-7 text-(--foreground-secondary)" },
+        slots.default?.()
+      ),
   },
   marks: {
     strong: (_, { slots }) =>
-      h("strong", { class: "font-bold text-(--neutral-600)" }, slots.default?.()),
-    em: (_, { slots }) => h("em", { class: "italic text-(--neutral-600)" }, slots.default?.()),
+      h("strong", { class: "font-bold text-(--foreground-secondary)" }, slots.default?.()),
+    em: (_, { slots }) =>
+      h("em", { class: "italic text-(--foreground-secondary)" }, slots.default?.()),
     link: ({ value }, { slots }) => {
       let href = value?.href || "";
       const target = (href || "").startsWith("http") ? "_blank" : undefined;

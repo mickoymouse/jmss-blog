@@ -6,7 +6,7 @@ defineProps<{ article: Blog }>();
 <template>
   <RouterLink :to="`/blog/${article.slug.current}`" class="flex flex-col gap-2">
     <h3 class="text-5">{{ article.title }}</h3>
-    <p class="text-8-italic text-(--neutral-600)">
+    <p class="text-8-italic text-(--foreground-secondary)">
       {{
         new Date(article._createdAt).toLocaleDateString(undefined, {
           year: "numeric",

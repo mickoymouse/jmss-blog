@@ -18,7 +18,13 @@ body,
 
 :root {
     /* colors */
-    --background: #FBF9F7;
+    --background: var(--neutral-100);
+    --inactive-link: var(--neutral-600);
+    --active-link: var(--neutral-700);
+    --nav-bg: var(--neutral-0);
+    --foreground: var(--neutral-700);
+    --foreground-secondary: var(--neutral-600);
+    --border-color: var(--neutral-200);
 
     /* neutral */
     --neutral-900: #1c1a19;
@@ -49,6 +55,14 @@ body,
     /* red */
     --red-600: #D92D20;
     --red-400: #F04438;
+
+    .nav-link {
+        color: var(--inactive-link);
+    }
+
+    .nav-link.active {
+        color: var(--active-link);
+    }
 
     /* typography */
     .text-1 {
@@ -163,11 +177,17 @@ body,
 }
 
 .dark {
-
+    --background: var(--neutral-900);
+    --inactive-link: var(--neutral-400);
+    --active-link: var(--neutral-0);
+    --nav-bg: var(--neutral-800);
+    --foreground: var(--neutral-0);
+    --foreground-secondary: var(--neutral-400);
+    --border-color: var(--neutral-700);
 }
 
 @layer base {
     body {
-        @apply font-dm-sans bg-(--background) text-(--neutral-700);
+        @apply font-dm-sans bg-(--background) text-(--foreground);
     }
 }

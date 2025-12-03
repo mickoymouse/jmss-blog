@@ -23,7 +23,7 @@ onMounted(async () => {
         <h1 class="text-2">My Articles</h1>
         <span class="h-1 w-10 bg-(--blue-500) inline-block self-end mb-2" aria-hidden="true"></span>
       </header>
-      <p class="text-7 text-(--neutral-600)">
+      <p class="text-7 text-(--foreground-secondary)">
         Below are all my recent blog posts. Click on any title to read the full article.
       </p>
     </div>

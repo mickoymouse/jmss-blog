@@ -3,6 +3,10 @@ import { nextTick, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 import DarkIcon from "@/icons/icon-moon.svg";
+import LightIcon from "@/icons/icon-sun.svg";
+import { useTheme } from "@/composables/Theme";
+
+const { isDarkMode, toggleTheme } = useTheme();
 
 const routes = [
   {
@@ -40,6 +44,12 @@ const updateNavActiveStyle = () => {
   const el = links.value[idx].querySelector("a");
   if (!el) return;
 
+  links.value.forEach((link) => {
+    link.querySelector("a")?.classList.remove("active");
+  });
+
+  el.classList.add("active");
+
   navActiveStyle.value = {
     width: el.offsetWidth + "px",
     left: el.offsetLeft + "px",
@@ -63,13 +73,15 @@ onMounted(() => {
 
 <template>
   <header
-    class="h-[52px] flex items-center justify-between p-2 rounded-md max-w-[640px] min-w-[640px] border-2 border-(--neutral-200) bg-(--neutral-0) mt-5"
+    class="h-[52px] flex items-center justify-between p-2 rounded-md max-w-[640px] min-w-[640px] border-2 border-(--border-color) bg-(--nav-bg) mt-5"
   >
     <img src="@/assets/me.jpg" alt="judge micko's image" class="h-10 w-10 rounded-md" />
     <nav class="flex gap-4 items-center">
       <ul class="flex gap-6 relative">
         <div v-for="r in routes" :key="r.name" class="flex flex-col" ref="links">
-          <RouterLink :to="{ name: r.routeName }" tag="li">{{ r.name }}</RouterLink>
+          <RouterLink class="nav-link" :to="{ name: r.routeName }" tag="li">{{
+            r.name
+          }}</RouterLink>
         </div>
         <span
           :style="navActiveStyle"
@@ -78,9 +90,11 @@ onMounted(() => {
         ></span>
       </ul>
       <button
-        class="border-2 border-(--neutral-200) bg-(--neutral-100) p-2 rounded-md cursor-pointer"
+        class="border-2 border-(--border-color) bg-(--background) p-2 rounded-md cursor-pointer"
+        @click="toggleTheme"
       >
-        <DarkIcon />
+        <DarkIcon v-if="!isDarkMode" />
+        <LightIcon v-else />
       </button>
     </nav>
   </header>
