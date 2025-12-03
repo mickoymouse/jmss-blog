@@ -95,15 +95,21 @@ onMounted(() => {
         ></span>
       </ul>
       <button
-        class="flex items-center justify-center md:hidden cursor-pointer rounded-lg p-2 focus:outline-none"
+        class="relative flex items-center justify-center md:hidden cursor-pointer rounded-lg p-2 focus:outline-none"
         @click="() => (isMenuOpen = !isMenuOpen)"
         :class="{
           'bg-(--neutral-700) text-(--neutral-0) dark:bg-(--neutral-0) dark:text-(--neutral-700)':
             isMenuOpen,
         }"
       >
-        <Menu v-if="!isMenuOpen" />
-        <MenuClose v-else />
+        <Menu
+          class="transition-transform duration-500 ease-in-out"
+          :class="isMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'"
+        />
+        <MenuClose
+          class="absolute transition-transform duration-500 ease-in-out"
+          :class="isMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'"
+        />
       </button>
       <ul
         :class="[
