@@ -14,13 +14,19 @@ const { isDarkMode } = useTheme();
 <template>
   <div class="relative flex flex-col h-screen w-full items-center">
     <Navbar />
-    <PatternLight v-if="!isDarkMode" class="absolute top-0 right-0 translate-x-1/2 -z-5" />
-    <PatternDark v-else class="absolute top-0 right-0 translate-x-1/2 -z-5" />
     <PatternLight
       v-if="!isDarkMode"
-      class="absolute top-0 left-0 translate-y-1/2 -translate-x-1/2 -z-5"
+      class="hidden lg:block absolute top-0 right-0 translate-x-1/2 -z-5"
     />
-    <PatternDark v-else class="absolute top-0 left-0 translate-y-1/2 -translate-x-1/2 -z-5" />
+    <PatternDark v-else class="hidden lg:block absolute top-0 right-0 translate-x-1/2 -z-5" />
+    <PatternLight
+      v-if="!isDarkMode"
+      class="hidden lg:block absolute top-0 left-0 translate-y-1/2 -translate-x-1/2 -z-5"
+    />
+    <PatternDark
+      v-else
+      class="hidden lg:block absolute top-0 left-0 translate-y-1/2 -translate-x-1/2 -z-5"
+    />
     <main
       class="h-[calc(100vh-52px)] max-w-[calc(100%-32px)] md:max-w-[630px] px-2 w-full border-l-2 border-r-2 border-b-2 border-(--border-color)"
     >
