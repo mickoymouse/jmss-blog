@@ -12,7 +12,7 @@ const { isDarkMode } = useTheme();
 </script>
 
 <template>
-  <div class="relative flex flex-col h-screen w-full items-center">
+  <div class="relative flex flex-col h-dvh w-full items-center">
     <Navbar />
     <PatternLight
       v-if="!isDarkMode"
