@@ -43,7 +43,13 @@ export const handler: Handler = async (event, context) => {
       }),
     });
 
-    const data: BrevoResponse = await response.json();
+    const text = await response.text();
+    let data: BrevoResponse | null = null;
+    try {
+      data = text ? JSON.parse(text) : null;
+    } catch {
+      data = { message: text || "No content" };
+    }
 
     return {
       statusCode: response.status,
