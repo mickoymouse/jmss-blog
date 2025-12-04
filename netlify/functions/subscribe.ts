@@ -38,7 +38,8 @@ export const handler: Handler = async (event, context) => {
       },
       body: JSON.stringify({
         email,
-        listIds: [2], // your list ID
+        listIds: [2],
+        updateEnabled: true,
       }),
     });
 
