@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
+import ThankYou from "@/assets/thankyou.svg";
+
+const showThankYou = ref(false);
 const email = ref("");
 
 const handleSubmit = async () => {
@@ -19,9 +22,9 @@ const handleSubmit = async () => {
     data = text ? JSON.parse(text) : null;
   } catch {
     data = { message: text || "No content" };
+  } finally {
+    showThankYou.value = true;
   }
-
-  console.log(data);
 };
 </script>
 
@@ -39,7 +42,11 @@ const handleSubmit = async () => {
         I'd love to have you along for the ride and also hear about your own journey!
       </p>
     </div>
-    <form @submit.prevent="handleSubmit" class="flex flex-col">
+    <div v-if="showThankYou" class="flex flex-col items-center">
+      <ThankYou class="w-full" />
+      <p class="text-8 text-(--foreground-secondary)">Thank you for subscribing! Stay tuned!</p>
+    </div>
+    <form v-else @submit.prevent="handleSubmit" class="flex flex-col">
       <div>
         <label for="email">Email Address</label>
         <input
