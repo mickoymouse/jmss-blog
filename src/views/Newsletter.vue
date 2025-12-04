@@ -1,3 +1,23 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const email = ref("");
+
+const handleSubmit = async () => {
+  console.log("Submitting email:", email.value);
+  const response = await fetch("/.netlify/functions/subscribe", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email: email.value }),
+  });
+
+  const data = await response.json();
+  console.log(data);
+};
+</script>
+
 <template>
   <div class="flex flex-col pt-12 gap-6">
     <div class="flex flex-col gap-4">
@@ -12,10 +32,11 @@
         I'd love to have you along for the ride and also hear about your own journey!
       </p>
     </div>
-    <form action="" class="flex flex-col">
+    <form @submit.prevent="handleSubmit" class="flex flex-col">
       <div>
         <label for="email">Email Address</label>
         <input
+          v-model="email"
           id="email"
           type="email"
           placeholder="email@example.com"
