@@ -13,7 +13,14 @@ const handleSubmit = async () => {
     body: JSON.stringify({ email: email.value }),
   });
 
-  const data = await response.json();
+  const text = await response.text();
+  let data: any = null;
+  try {
+    data = text ? JSON.parse(text) : null;
+  } catch {
+    data = { message: text || "No content" };
+  }
+
   console.log(data);
 };
 </script>
